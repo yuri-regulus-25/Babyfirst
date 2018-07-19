@@ -1,0 +1,39 @@
+/*Android アプリ開発メモ*/
+## XMLコーディング ##
+パッと見た感じ、HTML感がする。
+コメントアウトもHTMLと同じ<!-- (code) -->
+<RelativeLayout>タブの中でいろいろしていく。のかな!
+記載方法(超簡単に)
+<RelativeLayout
+	(なんかよく分かんないのが大量大量)
+	<(コントロールの種類)
+		android:(プロパティ名)="中身"
+	/>
+>
+C#でいう各コントロールのプロパティをいじってるイメージ
+XML:android:id
+C#:Name
+memo:コーディングしていくときに分かりやすくする。
+こいつをいじりたい!って一つだけを指定する。
+HTMLのidど同じ。
+XML:android:layout_width, android:layout_heigth
+C#:Size
+memo:コントロールのサイズ。px指定なのかは分からん。
+XML:android:text
+C#:Text
+memo:そのまま。表示する文字列。
+
+## Javaコーディング ##
+importで外部からのファイル等(XMLで記載した各ツールとか)を宣言?
+少なくとも、import android.widget.(コントロール名)
+public class (クラス名) (クラス継承)
+コントロールをいじりたいときは基本的に変数に紐付けていじるのかな。
+例えば、C#でいう" Form2 form2 = new Form2(); "
+Javaだと"TextView textview = (TextView) findViewById(R.id.textview);"
+書き方は
+(種類) (変数名) = (種類) findViewById(r.id.(ID名));
+コントロールのプロパティをいじる時はまさにC#
+textView.setText("(なんでもいい文字列)");
+(変数名).(プロパティ指定)("(文字列)");
+整数(int) → 文字列(String)へは、String.valueof(数値);
+変数のみ表示したいって時もString.valueOfメソッドは必要。だけど、Stringと同時に表示するのならいらない？
